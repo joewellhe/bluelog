@@ -19,6 +19,13 @@ from bluelog.utils import redirect_back, allowed_file
 admin_bp = Blueprint('admin', __name__)
 
 
+# 为整个蓝本添加登录保护
+# @admin_bp.before_request
+# @login_required
+# def login_protect():
+#     pass
+
+
 @admin_bp.route('/settings', methods=['GET', 'POST'])
 @login_required
 def settings():
